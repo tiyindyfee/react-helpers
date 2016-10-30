@@ -39,14 +39,20 @@ class MyComponent extends React.Component {
   constructor(props) {
     super(props)
     classAutoBind(this)
+    // optionally, set initial state to the shared state
     this.state = sharedState()
   }
   componentDidMount() {
+    // update entire state
     attachSharedState(this)
-    // OR
-    attachSharedState()
+    // OR use a callback for custom needs...
+    //attachSharedState(this, (state) => {
+      //console.log(state)
+      // ...add custom this.setState call here
+    //})
   }
   componentWillUnmount() {
+    // unregister the shared state event listener
     detachSharedState(this)
   }
   render() {
