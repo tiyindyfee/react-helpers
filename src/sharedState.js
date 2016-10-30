@@ -1,4 +1,4 @@
-// ES6 utility function written by Collin Schneider
+// ES6 React utility function written by Collin Schneider
 let sharedStateObject = {}
 
 function sharedState(newStateObject) {
@@ -16,14 +16,20 @@ function sharedState(newStateObject) {
 }
 
 function attachSharedState(context) {
-  window.addEventListener('sharedState', ({ detail }) => {
+  context.sharedStateEventHandler = ({ detail }) => {
     if (typeof context === 'function') {
       context(detail)
     }
     else {
       context.setState(detail)
     }
-  })
+  }
+
+  window.addEventListener('sharedState', context.sharedStateEventHandler)
 }
 
-export { sharedState, attachSharedState }
+function detachSharedState(context) {
+  window.removeEventListener('sharedState', context.sharedStateEventHandler)
+}
+
+export { sharedState, attachSharedState, detachSharedState }
