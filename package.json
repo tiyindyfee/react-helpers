@@ -1,0 +1,23 @@
+{
+  "name": "react-helpers",
+  "version": "1.0.0",
+  "description": "A collection of small helpers for React in ES6 syntax.",
+  "main": "classAutoBind.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tiyindyfee/react-helpers.git"
+  },
+  "keywords": [
+    "react",
+    "es6"
+  ],
+  "author": "Collin Schneider",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tiyindyfee/react-helpers/issues"
+  },
+  "homepage": "https://github.com/tiyindyfee/react-helpers#readme"
+}
