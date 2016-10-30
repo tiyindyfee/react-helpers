@@ -2,8 +2,9 @@
   "name": "react-helpers",
   "version": "1.0.0",
   "description": "A collection of small helpers for React in ES6 syntax.",
-  "main": "classAutoBind.js",
+  "main": "dist/classAutoBind.js",
   "scripts": {
+    "build": "babel src --presets latest,react -d dist",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -19,5 +20,26 @@
   "bugs": {
     "url": "https://github.com/tiyindyfee/react-helpers/issues"
   },
-  "homepage": "https://github.com/tiyindyfee/react-helpers#readme"
+  "homepage": "https://github.com/tiyindyfee/react-helpers#readme",
+  "devDependencies": {
+    "babel": "^6.5.2",
+    "babel-cli": "^6.10.1",
+    "babel-core": "^6.16.0",
+    "babel-loader": "^6.2.5",
+    "babel-preset-latest": "^6.16.0",
+    "babel-preset-react": "^6.11.1",
+    "react": "^15.2.1",
+    "react-dom": "^15.2.1",
+    "react-localstorage": "^0.3.0",
+    "react-mixin": "^3.0.5",
+    "react-redux": "^4.4.5",
+    "react-router": "^2.6.0",
+    "react-router-redux": "^4.0.5",
+    "redux": "^3.5.2",
+    "redux-devtools": "^3.3.1",
+    "redux-devtools-dock-monitor": "^1.1.1",
+    "redux-devtools-log-monitor": "^1.0.11",
+    "webpack": "^1.13.1",
+    "webpack-dev-server": "^1.14.1"
+  }
 }
