@@ -6,7 +6,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
-// ES6 utility function written by Collin Schneider
+// ES6 React utility function written by Collin Schneider
 var sharedStateObject = {};
 
 function sharedState(newStateObject) {
@@ -24,7 +24,7 @@ function sharedState(newStateObject) {
 }
 
 function attachSharedState(context) {
-  window.addEventListener('sharedState', function (_ref) {
+  context.sharedStateEventHandler = function (_ref) {
     var detail = _ref.detail;
 
     if (typeof context === 'function') {
@@ -32,8 +32,15 @@ function attachSharedState(context) {
     } else {
       context.setState(detail);
     }
-  });
+  };
+
+  window.addEventListener('sharedState', context.sharedStateEventHandler);
+}
+
+function detachSharedState(context) {
+  window.removeEventListener('sharedState', context.sharedStateEventHandler);
 }
 
 exports.sharedState = sharedState;
 exports.attachSharedState = attachSharedState;
+exports.detachSharedState = detachSharedState;
