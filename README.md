@@ -43,6 +43,8 @@ class MyComponent extends React.Component {
   }
   componentDidMount() {
     attachSharedState(this)
+    // OR
+    attachSharedState()
   }
   componentWillUnmount() {
     detachSharedState(this)

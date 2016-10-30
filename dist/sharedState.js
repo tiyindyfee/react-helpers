@@ -23,12 +23,12 @@ function sharedState(newStateObject) {
   return sharedStateObject;
 }
 
-function attachSharedState(context) {
+function attachSharedState(context, callback) {
   context.sharedStateEventHandler = function (_ref) {
     var detail = _ref.detail;
 
-    if (typeof context === 'function') {
-      context(detail);
+    if (typeof callback === 'function') {
+      callback(detail);
     } else {
       context.setState(detail);
     }
