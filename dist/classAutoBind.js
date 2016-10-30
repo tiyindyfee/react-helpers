@@ -3,9 +3,8 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-
 // ES6 utility function written by Collin Schneider
-exports.default = function (context) {
+function classAutoBind(context) {
   var _iteratorNormalCompletion = true;
   var _didIteratorError = false;
   var _iteratorError = undefined;
@@ -32,4 +31,6 @@ exports.default = function (context) {
       }
     }
   }
-};
+}
+
+exports.default = classAutoBind;
